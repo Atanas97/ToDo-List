@@ -1,0 +1,213 @@
+@import './variable';
+@import '../assets/mixins';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: $font-main;
+}
+
+body {
+    background-color: #f8f9d2;
+    background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.load-screen {
+    background-color: $purple-main;
+    height: 200px;
+    width: 300px;
+    display: none; //change to flex
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(99, 96, 96, 0.3);
+
+        h2 {
+            color: #fff;
+            font-size: 1.8em;
+            padding-bottom: 10px;
+        }
+        i {
+            color: #fff;
+            font-size: 5rem;
+        }
+
+            button {
+                padding: 10px 20px;
+                outline: none;
+                background-color: $purple-secondary;
+                color: #fff;
+                border-radius: 5px;
+                margin: 10px;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover {
+                scale: (1.1);
+                transition: 500ms ease;
+            }
+}
+
+.logIn-container.active,
+.registerForm.active {
+    // display: block; delete after for effect
+    transform: scale(1);
+}
+
+
+.logIn-container {
+    @include formContainer(40vh);
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+    }
+    i {
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    .input-row {
+        display: inline-block;
+        width: 100%;
+        font-size: 1em;
+        padding: 10px;
+        outline: none !important;
+    }
+        .label-row {
+            display: block;
+            color: #fff;
+            margin: 10px 0;
+        }
+            button {
+                @include buttons (16px);
+            }
+                .rememberMe {
+                    display: flex;
+                    width: 10%;
+                }
+}
+
+.registerForm {
+    @extend .logIn-container;
+}
+
+.tos-row {
+    margin: 20px 5px;
+    color: #fff;
+}
+
+.to-do-container {
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 20em;
+    z-index: 1111;
+
+    .to-do-header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        
+            img {
+                width: 100%;
+                border-radius: 5px;
+            }
+                .times {
+                    position: absolute;
+                    display: flex;
+                    justify-content: space-around;
+                    color: #fff;
+                    width: 100%;
+                    margin-top: 0.5em;
+                }
+    }
+    
+    .to-do-body {
+        height: 40vh;
+        overflow: hidden;
+        
+        
+        input {
+            display: inline-block;
+            width: 100%;
+            font-size: 1em;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .to-do-ul {
+            overflow-y: scroll;
+            height: 40vh;
+            
+        
+            li {
+                padding-left: .5em;
+                padding-right: .5em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: #4e4e4e;
+                height: 2em;
+                border-bottom: 1px solid $gray-dark;
+                background-color: $gray-light;
+                cursor: pointer;
+            
+            &.completed {
+                    color: $gray-dark;
+                    text-decoration: line-through;
+                    background-color: rgba(0, 0, 0, 0.24);
+                }
+            }
+        }
+    }
+
+    .fa-plus {
+        height: 2.3em;
+        width: 2.3em;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(31, 27, 27);
+        border: 1px solid #333;
+        box-shadow: 0 4px 6px rgba(99, 96, 96, 0.3);
+        cursor: pointer;
+    }
+    .to-do-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border-top: 1px solid #ccc;
+        margin-top: 5px;
+        overflow-y: scroll;
+    }
+}
+.user-nav-menu {
+    display: flex;
+    flex-direction: column; 
+    align-self: flex-start;
+    
+
+    button {
+        @include buttons($purple-main);
+        margin: 10px;
+    }
+    :hover{
+        scale: (1.1);
+        transition: 500ms ease;
+    }
+}

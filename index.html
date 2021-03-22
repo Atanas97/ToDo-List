@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25a7d28d82.js" crossorigin="anonymous"></script>
+    <title>To-Do List Deluxe</title>
+</head>
+
+<body>
+
+    <div class="registerForm">
+        <form>
+            <div class="header">
+                <h2>Register</h2>
+                <i class="fas fa-times" id="closeRegister"></i>
+            </div>
+            <div>
+                <label class="label-row">First Name</label>
+                <input class="input-row" type="text" name="fname" placeholder="First Name..." required
+                    autocomplete="off">
+            </div>
+            <div>
+                <label class="label-row">Last Name</label>
+                <input class="input-row" type="text" name="lname" placeholder="Last Name..." required
+                    autocomplete="off">
+            </div>
+            <div>
+                <label class="label-row">Email</label>
+                <input class="input-row" type="email" name="email" placeholder="Email..." required autocomplete="off">
+            </div>
+            <div>
+                <label class="label-row">Password</label>
+                <input class="input-row" type="password" name="password" placeholder="Password..." required>
+            </div>
+            <div class="tos-row">
+                <input type="checkbox" name="tos" id="tos" required>
+                <label for="tos">I agree to the Terms of Use</label>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <!--swapped ending div with ending form tag-->
+
+    <div class="load-screen" id="load-screen">
+        <h2>To Do list Deluxe</h2>
+        <div>
+            <button id="register-button">Sign In</button>
+            <button id="login-button">Log In</button>
+        </div>
+    </div>
+
+    <form class="logIn-form">
+        <div class="logIn-container" id="logIn-container">
+            <div class="header">
+                <h2>Log In</h2>
+                <i class="fas fa-times" id="closeLogIn"></i>
+            </div>
+            <div>
+                <label class="label-row" for="email">Email</label>
+                <input class="input-row" type="email" name="name" id="name" placeholder="Email..." required>
+            </div>
+            <div>
+                <label class="label-row" for="password">Password</label>
+                <input class="input-row" type="password" name="password" placeholder="Password..." id="password"
+                    required autocomplete="off">
+            </div>
+            <div class="tos-row">
+                <input type="checkbox" name="checked" id="checked">
+                <label for="checked">Remember Me</label>
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <div class="user-nav-menu">
+        <button>Dashboard</button>
+        <button>Account Settings</button>
+        <button>Log out</button>
+    </div>
+
+    <div class="to-do-container">
+        <div class="to-do-header" id="to-do-header">
+            <img src="./img/background-pic.webp" alt="background-pic">
+            <div class="times" id="times">
+                <!--Loading time and date dynamically-->
+            </div>
+        </div>
+
+        <div class="to-do-body" id="to-do-body">
+            <form id="to-do-form">
+                <input type="text" placeholder="Create To do?" autocomplete="off" id="input">
+                <ul class="to-do-ul" id="to-do-ul">
+                    <li id="to-do-li" class=""><i class="far fa-circle"></i>Add your first to do!
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <i class="fas fa-plus"></i>
+        <div class="to-do-footer">
+            <p>Number of Tasks#</p>
+            <p>Number of Completed#</p>
+        </div>
+    </div>
+
+
+    <script src="myapp.js"></script>
+</body>
+
+</html>
